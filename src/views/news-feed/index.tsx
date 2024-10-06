@@ -7,6 +7,7 @@ import useLocalStorageState from "use-local-storage-state";
 import Select from "components/select";
 import Categories from "mocks/categories.json";
 import Sources from "mocks/sources.json";
+import { handleFilter } from "utils";
 
 interface Props {}
 const NewsFeed: FC<Props> = () => {
@@ -23,16 +24,7 @@ const NewsFeed: FC<Props> = () => {
     getData(sources, category);
   }, [sources, category]);
 
-  const searchedData = search
-    ? data.filter((item) => {
-        return (
-          item?.title?.toLowerCase().includes(search.toLowerCase()) ||
-          item?.author?.toLowerCase().includes(search.toLowerCase()) ||
-          item?.source?.name?.toLowerCase().includes(search.toLowerCase()) ||
-          item?.publishedAt?.toLowerCase().includes(search.toLowerCase())
-        );
-      })
-    : data;
+  const searchedData = handleFilter(search, data);
 
   return (
     <div className="container-fluid">

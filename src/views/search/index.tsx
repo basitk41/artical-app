@@ -4,6 +4,7 @@ import useSearchData from "hooks/useSearchData";
 import Card from "components/card";
 import Spinner from "components/spinner";
 import Button from "components/button";
+import { handleFilter } from "utils";
 
 interface Props {}
 const Search: FC<Props> = () => {
@@ -11,16 +12,7 @@ const Search: FC<Props> = () => {
   const [search, setSearch] = useState<string>("");
   const { data, loading, handleSearch } = useSearchData();
 
-  const searchedData = search
-    ? data.filter((item) => {
-        return (
-          item?.title?.toLowerCase().includes(search.toLowerCase()) ||
-          item?.author?.toLowerCase().includes(search.toLowerCase()) ||
-          item?.source?.name?.toLowerCase().includes(search.toLowerCase()) ||
-          item?.publishedAt?.toLowerCase().includes(search.toLowerCase())
-        );
-      })
-    : data;
+  const searchedData = handleFilter(search, data);
 
   return (
     <div className="container-fluid">

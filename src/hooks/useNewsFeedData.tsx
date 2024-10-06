@@ -1,16 +1,7 @@
 import { useState } from "react";
 import { getNewsFeedAPI } from "models";
+import { INewsAPIProps } from "types/index";
 
-export interface INewsAPIProps {
-  author: string;
-  content: string;
-  description: string;
-  publishedAt: string;
-  source: { id: any; name: string };
-  title: string;
-  url: string;
-  urlToImage: string;
-}
 const useData = () => {
   const [data, setData] = useState<INewsAPIProps[]>([]);
   const [loading, setLoading] = useState<boolean>(false);
