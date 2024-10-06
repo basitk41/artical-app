@@ -17,7 +17,11 @@ const Layout: FC<Props> = () => {
           </h1>
         </div>
         <div className="col-6 text-end py-md-2">
-          <span role="button" onClick={() => navigate("/search")}>
+          <span
+            aria-label="search"
+            role="button"
+            onClick={() => navigate("/search")}
+          >
             <SearchIcon width={40} height={40} />
           </span>
         </div>
