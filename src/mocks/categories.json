@@ -1,0 +1,10 @@
+[
+  { "id": "no-cat", "value": "", "title": "Select Category" },
+  { "id": "general", "value": "general", "title": "General" },
+  { "id": "business", "value": "business", "title": "Business" },
+  { "id": "entertainment", "value": "entertainment", "title": "Entertainment" },
+  { "id": "health", "value": "health", "title": "Health" },
+  { "id": "science", "value": "science", "title": "Science" },
+  { "id": "sports", "value": "sports", "title": "Sports" },
+  { "id": "technology", "value": "technology", "title": "Technology" }
+]

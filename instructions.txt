@@ -1,0 +1,11 @@
+How build image:
+Run the below command in the root folder of project.
+
+docker image build -t article-app-image:latest .
+
+Create a container from image:
+Run the below command to create a container from image we just create on above command.
+
+docker run -dp 8000:3000 --name article-app-container article-app-image:latest
+
+Now, open your browser and go to http://localhost:8000

@@ -1,0 +1,8 @@
+[
+  { "id": "no-src", "value": "", "title": "Select Source" },
+  { "id": "newsweek", "value": "newsweek", "title": "Newsweek" },
+  { "id": "bbc-sport", "value": "bbc-sport", "title": "BBC Sport" },
+  { "id": "bloomberg", "value": "bloomberg", "title": "Bloomberg" },
+  { "id": "cnn", "value": "cnn", "title": "CNN" },
+  { "id": "espn", "value": "espn", "title": "ESPN" }
+]
