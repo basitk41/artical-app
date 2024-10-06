@@ -1,13 +1,13 @@
 import { FC, useEffect, useState } from "react";
 import Input from "components/input";
 import useNewsFeedData from "hooks/useNewsFeedData";
-import Card from "components/card";
 import Spinner from "components/spinner";
 import useLocalStorageState from "use-local-storage-state";
 import Select from "components/select";
 import Categories from "mocks/categories.json";
 import Sources from "mocks/sources.json";
 import { handleFilter } from "utils";
+import Cards from "components/cards";
 
 interface Props {}
 const NewsFeed: FC<Props> = () => {
@@ -71,23 +71,7 @@ const NewsFeed: FC<Props> = () => {
               </div>
             </div>
             <div className="row">
-              {searchedData
-                ?.filter((item) => item.urlToImage)
-                ?.map((item: any, index) => (
-                  <div className="col-md-4">
-                    <Card
-                      key={index}
-                      author={item?.author}
-                      content={item?.content}
-                      description={item?.description}
-                      publishedAt={item?.publishedAt}
-                      source={item?.source}
-                      title={item?.title}
-                      url={item?.url}
-                      urlToImage={item?.urlToImage}
-                    />
-                  </div>
-                ))}
+              <Cards data={searchedData} />
             </div>
           </div>
         )
