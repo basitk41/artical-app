@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { INewsAPIProps } from "hooks/useSearchData";
+import { INewsAPIProps } from "types/index";
 const Card: FC<INewsAPIProps> = ({
   author,
   description,
